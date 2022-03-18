@@ -2,9 +2,8 @@ package com.gmail.newstestingapp.model
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import javax.inject.Inject
 
-class NewsPagingSource @Inject constructor(
+class NewsPagingSource constructor(
     private val newsService: NewsService
 ) : PagingSource<Int, NewsResponseItem>() {
     override fun getRefreshKey(state: PagingState<Int, NewsResponseItem>): Int? {
@@ -27,6 +26,6 @@ class NewsPagingSource @Inject constructor(
     }
 
     companion object {
-        const val INITIAL_PAGE_NUMBER = 1
+        const val INITIAL_PAGE_NUMBER = 0
     }
 }
