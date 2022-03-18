@@ -9,10 +9,10 @@ import retrofit2.http.Query
 
 interface NewsService {
 
-    @GET()
+    @GET(".")
     suspend fun getNews(
         @Query("page") page: Int
-    ): NewsResponse
+    ): List<NewsResponseItem>
 
     companion object {
         private const val BASE_URL = "http://188.40.167.45:3001/"

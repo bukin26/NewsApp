@@ -26,5 +26,5 @@ data class NewsResponseItem(
 	val clickUrl: String,
 
 	@field:SerializedName("img")
-	val img: String
+	val img: String?
 )

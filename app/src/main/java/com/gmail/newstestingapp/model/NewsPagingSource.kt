@@ -16,9 +16,9 @@ class NewsPagingSource constructor(
 
         return try {
             return LoadResult.Page(
-                data = news.newsResponse,
+                data = news,
                 prevKey = if (pageNumber > 1) pageNumber - 1 else null,
-                nextKey = if (news.newsResponse.isEmpty()) null else pageNumber + 1
+                nextKey = if (news.isEmpty()) null else pageNumber + 1
             )
         } catch (e: Exception) {
             LoadResult.Error(e)
