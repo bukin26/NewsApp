@@ -5,11 +5,14 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface NewsService {
 
-    @GET
-    suspend fun getNews(): NewsResponse
+    @GET()
+    suspend fun getNews(
+        @Query("page") page: Int
+    ): NewsResponse
 
     companion object {
         private const val BASE_URL = "http://188.40.167.45:3001/"
