@@ -1,5 +1,6 @@
 package com.gmail.newstestingapp.view
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -11,7 +12,7 @@ import com.gmail.newstestingapp.R
 import com.gmail.newstestingapp.databinding.ItemNewsBinding
 import com.gmail.newstestingapp.model.NewsResponseItem
 
-class NewsAdapter : PagingDataAdapter<NewsResponseItem, NewsAdapter.Holder>(GifsDiffCallback()) {
+class NewsAdapter : PagingDataAdapter<NewsResponseItem, NewsAdapter.Holder>(NewsDiffCallback()) {
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val news = getItem(position) ?: return
@@ -51,7 +52,7 @@ class NewsAdapter : PagingDataAdapter<NewsResponseItem, NewsAdapter.Holder>(Gifs
     }
 }
 
-class GifsDiffCallback : DiffUtil.ItemCallback<NewsResponseItem>() {
+class NewsDiffCallback : DiffUtil.ItemCallback<NewsResponseItem>() {
     override fun areItemsTheSame(oldItem: NewsResponseItem, newItem: NewsResponseItem): Boolean {
         return oldItem.title == newItem.title
     }

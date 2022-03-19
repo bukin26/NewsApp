@@ -31,12 +31,12 @@ class StoriesFragment : Fragment(R.layout.fragment_stories) {
 
         binding = FragmentStoriesBinding.inflate(inflater, container, false)
 
-        setUpGifsList()
+        setUpNews()
 
         return binding.root
     }
 
-    private fun setUpGifsList() {
+    private fun setUpNews() {
         val adapter = NewsAdapter()
         binding.storiesRecyclerView.layoutManager = LinearLayoutManager(context)
         binding.storiesRecyclerView.adapter = adapter

@@ -33,12 +33,12 @@ class FavouritesFragment : Fragment(R.layout.fragment_favourites) {
 
         binding = FragmentFavouritesBinding.inflate(inflater, container, false)
 
-        setUpGifsList()
+        setUpNews()
 
         return binding.root
     }
 
-    private fun setUpGifsList() {
+    private fun setUpNews() {
         val adapter = NewsAdapter()
         binding.favouritesRecyclerView.layoutManager = LinearLayoutManager(context)
         binding.favouritesRecyclerView.adapter = adapter

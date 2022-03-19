@@ -9,7 +9,14 @@
         android:id="@+id/favouritesFragment"
         android:name="com.gmail.newstestingapp.view.FavouritesFragment"
         android:label="fragment_favourites"
-        tools:layout="@layout/fragment_favourites" />
+        tools:layout="@layout/fragment_favourites" >
+        <action
+            android:id="@+id/action_favouritesFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
+        <action
+            android:id="@+id/action_favouritesFragment_to_storiesFragment"
+            app:destination="@id/storiesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/storiesFragment"
         android:name="com.gmail.newstestingapp.view.StoriesFragment"
@@ -18,6 +25,9 @@
         <action
             android:id="@+id/action_storiesFragment_to_videoFragment"
             app:destination="@id/videoFragment" />
+        <action
+            android:id="@+id/action_storiesFragment_to_favouritesFragment"
+            app:destination="@id/favouritesFragment" />
     </fragment>
     <fragment
         android:id="@+id/videoFragment"
@@ -26,6 +36,12 @@
         tools:layout="@layout/fragment_video" >
         <action
             android:id="@+id/action_videoFragment_to_favouritesFragment"
+            app:destination="@id/favouritesFragment" />
+        <action
+            android:id="@+id/action_videoFragment_to_storiesFragment"
+            app:destination="@id/storiesFragment" />
+        <action
+            android:id="@+id/action_videoFragment_to_favouritesFragment2"
             app:destination="@id/favouritesFragment" />
     </fragment>
 </navigation>

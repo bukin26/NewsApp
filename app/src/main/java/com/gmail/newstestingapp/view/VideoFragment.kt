@@ -1,6 +1,7 @@
 package com.gmail.newstestingapp.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import com.gmail.newstestingapp.databinding.FragmentStoriesBinding
 import com.gmail.newstestingapp.databinding.FragmentVideoBinding
 import com.gmail.newstestingapp.viewmodel.FavouritesViewModel
 import com.gmail.newstestingapp.viewmodel.StoriesViewModel
+import com.gmail.newstestingapp.viewmodel.VideoViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collectLatest
@@ -24,7 +26,7 @@ import kotlinx.coroutines.launch
 @ExperimentalCoroutinesApi
 class VideoFragment : Fragment(R.layout.fragment_video) {
     private lateinit var binding: FragmentVideoBinding
-    private val viewModel: StoriesViewModel by viewModels()
+    private val viewModel: VideoViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,12 +36,12 @@ class VideoFragment : Fragment(R.layout.fragment_video) {
 
         binding = FragmentVideoBinding.inflate(inflater, container, false)
 
-        setUpGifsList()
+        setUpNews()
 
         return binding.root
     }
 
-    private fun setUpGifsList() {
+    private fun setUpNews() {
         val adapter = NewsAdapter()
         binding.videoRecyclerView.layoutManager = LinearLayoutManager(context)
         binding.videoRecyclerView.adapter = adapter
